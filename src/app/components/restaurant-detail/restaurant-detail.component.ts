@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { RestaurantService } from 'src/app/services/restaurant.service';
-import { Restaurant } from '../../../../../shared/models/restaurant';
+import { Restaurant } from '../../..//models/restaurant';
 
 @Component({
   selector: 'discover-restaurant-detail',

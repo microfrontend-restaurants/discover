@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Restaurant } from '../../../../../shared/models/restaurant';
+import { Restaurant } from '../../../models/restaurant';
 import { RestaurantService } from 'src/app/services/restaurant.service';
 
 @Component({

@@ -1,14 +1,12 @@
 {
   "name": "discover",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port 4200 --live-reload false",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "build:single-spa:discover": "ng build discover --prod",
-    "serve:single-spa:discover": "ng s --project discover --disable-host-check --port 4200 --live-reload false"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {

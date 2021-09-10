@@ -37,35 +37,37 @@
         <div class="form-label d-none d-sm-block">&nbsp;</div>
         <button class="btn btn-success">Search</button>
     </div>
-    
 </form>
-<div class="row">
-    <div class="col-12 col-md-6 mb-4" *ngFor="let restaurant of restaurants">
-        <div class="card shadow clickable" [routerLink]="['/restaurants', restaurant.id]">
-            <div class="row g-0">
-                <div class="col-4">
-                    <img [src]="restaurant.convertedImage" class="img-fluid rounded-start" />
-                </div>
-                <div class="col-8">
-                    <div class="card-body">
-                        <h5 class="card-title mb-2 ">{{restaurant.name}}</h5>
-                        <h6 class="card-subtitle mb-4 text-muted">
-                            <span *ngFor="let category of restaurant.categories; last as isLast">
-                                {{category}}
-                                <ng-container *ngIf="!isLast"> | </ng-container>
-                            </span>
-                            <span class="ms-2">{{restaurant.priceRange | priceRange}}</span>
-                        </h6>
-                        <div discover-rating [value]="restaurant.rating"></div>
-                        <div class="mt-3">
-                            <strong>Location </strong> {{restaurant.location}}
+<discover-loading-indicator *ngIf="isLoading"></discover-loading-indicator>
+<ng-container *ngIf="!isLoading">
+    <div class="row">
+        <div class="col-12 col-md-6 mb-4" *ngFor="let restaurant of restaurants">
+            <div class="card shadow clickable" [routerLink]="['/restaurants', restaurant.id]">
+                <div class="row g-0">
+                    <div class="col-4">
+                        <img [src]="restaurant.convertedImage" class="img-fluid rounded-start" />
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <h5 class="card-title mb-2 ">{{restaurant.name}}</h5>
+                            <h6 class="card-subtitle mb-4 text-muted">
+                                <span *ngFor="let category of restaurant.categories; last as isLast">
+                                    {{category}}
+                                    <ng-container *ngIf="!isLast"> | </ng-container>
+                                </span>
+                                <span class="ms-2">{{restaurant.priceRange | priceRange}}</span>
+                            </h6>
+                            <div discover-rating [value]="restaurant.rating"></div>
+                            <div class="mt-3">
+                                <strong>Location </strong> {{restaurant.location}}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="alert alert-info shadow" role="alert" *ngIf="!isLoading && !hasResults">
-    No restaurants found.
-</div>
+    <div class="alert alert-info shadow" role="alert" *ngIf="!hasResults">
+        No restaurants found.
+    </div>
+</ng-container>

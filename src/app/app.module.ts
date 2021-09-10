@@ -12,6 +12,7 @@ import { registerLocaleData } from '@angular/common';
 import localeAT from '@angular/common/locales/de-AT';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PriceRangePipe } from './pipes/price-range.pipe';
+import { LoadingIndicatorComponent } from './components/loading-indicator/loading-indicator.component';
 registerLocaleData(localeAT);
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ registerLocaleData(localeAT);
     RestaurantListComponent,
     RatingComponent,
     RestaurantDetailComponent,
-    PriceRangePipe
+    PriceRangePipe,
+    LoadingIndicatorComponent
   ],
   imports: [
     BrowserModule,

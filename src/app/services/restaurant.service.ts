@@ -10,8 +10,26 @@ export class RestaurantService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getRestaurants() {
-    return this.httpClient.get<Restaurant[]>(`${environment.api}/restaurant`);
+  searchRestaurants(filter: string | null, category: string | null, range: number | null) {
+
+    let params = new HttpParams();
+
+    if(filter != null) {
+      params = params.append("filter", filter);
+    }
+
+    if(category != null) {
+      params = params.append("category", category);
+    }
+
+    if(range != null) {
+      params = params.append("range", range)
+    }
+    
+
+    return this.httpClient.get<Restaurant[]>(`${environment.api}/restaurant/search`, {
+      params: params
+    });
   }
 
   getRestaurantById(id: number, withItems: boolean = false) {

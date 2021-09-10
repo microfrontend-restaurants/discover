@@ -12,13 +12,19 @@
                 <div class="card-body">
                     <h1 class="card-title my-2">{{restaurant.name}}</h1>
                     <h2 class="card-subtitle mb-3 text-muted">
-                        <span *ngFor="let category of restaurant.categories" class="me-2">
+                        <span *ngFor="let category of restaurant.categories; last as isLast" class="me-2">
                             {{category}}
+                            <ng-container *ngIf="!isLast"> | </ng-container>
                         </span>
                     </h2>
-                    <discover-rating [value]="restaurant.rating"></discover-rating>
-                    <div class="mt-3">
-                        <strong>Location </strong> {{restaurant.location}}
+                    <div class="mb-1">
+                        <strong>Price </strong>
+                        {{restaurant.priceRange | priceRange}}
+                    </div>
+                    <div discover-rating [value]="restaurant.rating" class="mb-1"></div>
+                    <div>
+                        <strong>Location </strong>
+                        {{restaurant.location}}
                     </div>
                 </div>
             </div>

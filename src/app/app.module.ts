@@ -10,18 +10,22 @@ import { RestaurantDetailComponent } from './components/restaurant-detail/restau
 import { registerLocaleData } from '@angular/common';
 
 import localeAT from '@angular/common/locales/de-AT';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PriceRangePipe } from './pipes/price-range.pipe';
 registerLocaleData(localeAT);
 @NgModule({
   declarations: [
     AppComponent,
     RestaurantListComponent,
     RatingComponent,
-    RestaurantDetailComponent
+    RestaurantDetailComponent,
+    PriceRangePipe
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'de-AT' }

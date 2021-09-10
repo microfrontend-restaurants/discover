@@ -6,6 +6,7 @@ export interface Restaurant {
     categories: string[],
     rating: number,
     location: string,
+    priceRange: number,
     image: number[],
     convertedImage: any,
     items: RestaurantItem[]

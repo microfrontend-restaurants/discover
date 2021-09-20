@@ -6,6 +6,7 @@ import { RestaurantDetailComponent } from './components/restaurant-detail/restau
 import { RestaurantListComponent } from './components/restaurant-list/restaurant-list.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'restaurants', pathMatch: 'full' },
   { path: 'restaurants', component: RestaurantListComponent },
   { path: 'restaurants/:id', component: RestaurantDetailComponent },
   { path: '**', component: EmptyRouteComponent }

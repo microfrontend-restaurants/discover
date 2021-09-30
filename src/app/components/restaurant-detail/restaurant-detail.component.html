@@ -36,14 +36,16 @@
                 <ul class="list-group list-group-flush mt-4">
                     <li class="list-group-item" *ngFor="let item of restaurant.items">
                         <div class="d-flex justify-content-between">
-                            <span>{{item.name}}</span>
+                            <span>
+                                {{item.name}}
+                                <small class="text-muted" *ngIf="item.allergyInformation">({{item.allergyInformation}})</small>
+                            </span>
                             <span>{{item.price | currency : 'EUR'}}</span>
                             <button class="btn btn-sm btn-secondary" (click)="addItem(item.id)"><i
                                     class="bi-plus"></i></button>
                         </div>
                     </li>
                 </ul>
-                <pre *ngIf="false">{{restaurant | json}}</pre>
             </div>
         </div>
     </ng-container>

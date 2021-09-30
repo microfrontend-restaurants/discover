@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Restaurant } from '../../../models/restaurant';
-import { RestaurantService } from 'src/app/services/restaurant.service';
+import { Restaurant } from '../../models/restaurant';
+import { RestaurantService } from '../../services/restaurant.service';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Category } from 'src/models/category';
-import { CategoryService } from 'src/app/services/category.service';
+import { Category } from '../../models/category';
+import { CategoryService } from '../../services/category.service';
 
 @Component({
   selector: "restaurant-list",

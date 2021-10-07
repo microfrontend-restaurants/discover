@@ -41,8 +41,7 @@
                                 <small class="text-muted" *ngIf="item.allergyInformation">({{item.allergyInformation}})</small>
                             </span>
                             <span>{{item.price | currency : 'EUR'}}</span>
-                            <button class="btn btn-sm btn-secondary" (click)="addItem(item.id)"><i
-                                    class="bi-plus"></i></button>
+                            <order-add-button [attr.id]="item.id"></order-add-button>
                         </div>
                     </li>
                 </ul>

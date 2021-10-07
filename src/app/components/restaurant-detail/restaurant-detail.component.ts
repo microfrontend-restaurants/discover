@@ -33,21 +33,5 @@ export class RestaurantDetailComponent implements OnInit {
         this.isLoading = false;
       });
     });
-
-  }
-
-  addItem(itemId: number) {
-    var result = localStorage.getItem("checkout");
-
-    var items = result === null ? [] : JSON.parse(result);
-    items.push(itemId);
-    
-    localStorage.setItem("checkout", JSON.stringify(items))
-
-    const itemAddedEvent = new CustomEvent("discover:item_added", {
-      bubbles: true,
-      detail: { itemId }
-    });
-    window.dispatchEvent(itemAddedEvent);
   }
 }

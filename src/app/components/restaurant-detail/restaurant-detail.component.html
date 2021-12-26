@@ -38,10 +38,13 @@
                         <div class="d-flex justify-content-between">
                             <span>
                                 {{item.name}}
-                                <small class="text-muted" *ngIf="item.allergyInformation">({{item.allergyInformation}})</small>
+                                <small class="text-muted"
+                                    *ngIf="item.allergyInformation">({{item.allergyInformation}})</small>
                             </span>
-                            <span>{{item.price | currency : 'EUR'}}</span>
-                            <order-add-button [attr.id]="item.id"></order-add-button>
+                            <span>
+                                <span class="me-4">{{item.price | currency : 'EUR'}}</span>
+                                <order-add-button [attr.id]="item.id"></order-add-button>
+                            </span>
                         </div>
                     </li>
                 </ul>

@@ -43,7 +43,7 @@
                             </span>
                             <span>
                                 <span class="me-4">{{item.price | currency : 'EUR'}}</span>
-                                <order-add-button [attr.id]="item.id"></order-add-button>
+                                <order-add-button [attr.item-id]="item.id"></order-add-button>
                             </span>
                         </div>
                     </li>

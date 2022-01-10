@@ -11,7 +11,7 @@ export class RestaurantService {
   constructor(private httpClient: HttpClient) { }
 
   searchRestaurants(filter?: string, category?: string, range?: number) {
-    return this.httpClient.get<Restaurant[]>(`${environment.api}/restaurant/search`, {
+    return this.httpClient.get<Restaurant[]>(`${environment.api}/restaurants/search`, {
       params: new HttpParams()
       .append("filter", filter ?? "")
       .append("category", category ?? "")
@@ -20,7 +20,7 @@ export class RestaurantService {
   }
 
   getRestaurantById(id: number, withItems: boolean = false) {
-    return this.httpClient.get<Restaurant>(`${environment.api}/restaurant/${id}`, {
+    return this.httpClient.get<Restaurant>(`${environment.api}/restaurants/${id}`, {
       params: new HttpParams().append("withItems", withItems)
     });
   }

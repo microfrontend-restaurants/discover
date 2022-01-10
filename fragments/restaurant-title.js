@@ -10,7 +10,7 @@ class RestaurantTitle extends HTMLElement {
 
     attributeChangedCallback() {
         const restaurantId = +this.getAttribute("restaurant-id");
-        fetch(`//localhost:5000/restaurant/${restaurantId}`)
+        fetch(`//localhost:5000/restaurants/${restaurantId}`)
         .then(response => response.json())
         .then(data => {
             this.shadowRoot.innerHTML =  `<div class="text-center">${data.name}</div>`;

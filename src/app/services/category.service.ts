@@ -13,6 +13,6 @@ export class CategoryService {
   ) { }
 
   getCategories() {
-    return this.httpClient.get<Category[]>(`${environment.api}/Category`);
+    return this.httpClient.get<Category[]>(`${environment.api}/categories`);
   }
 }
